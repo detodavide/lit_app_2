@@ -14,7 +14,7 @@ def filter_data(df, for_sale_threshold):
     return filtered_df
 
 def fetch_profile_names(username_requester):
-    db = connect_to_db("DiscoData")
+    db = connect_to_db(st.secrets["DB1"])
     if db is not None:
         collectionerSpider = db.collectionerSpider
         distinct_profiles = collectionerSpider.distinct('profile_name', {'username_request': username_requester})

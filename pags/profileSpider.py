@@ -11,7 +11,7 @@ def display_dataframe_with_links(df):
         st.markdown(f"[Link {index}]({row['url']})")
 
 def fetch_profile_names(username_requester):
-    db = connect_to_db("DiscoData")
+    db = connect_to_db(st.secrets['DB1'])
     if db is not None:
         profilerSpider = db.profilerSpider
         distinct_profiles = profilerSpider.distinct('profile_name', {'username_requester': username_requester})
