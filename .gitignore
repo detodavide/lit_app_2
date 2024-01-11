@@ -12,7 +12,7 @@ __pycache__/
 
 #env
 secrets.toml
-djorgeenv/
+vhvenv/
 .streamlit/
 
 # Distribution / packaging
