@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import pags.collectionSpider, pags.profileSpider
+import pags.collectionSpider, pags.profileSpider, pags.botlogs
 
 st.set_page_config(
     page_title="Keras"
@@ -20,7 +20,7 @@ class MultiApp:
         with st.sidebar:
             app = option_menu(
                 menu_title="Data",
-                options=["Profile Spider", "Collection Spider"],
+                options=["Bot Logs", "Profile Spider", "Collection Spider"],
                 default_index=1,
                 styles={
                 "container": {"padding": "4!important","background-color":'black'},
@@ -29,6 +29,8 @@ class MultiApp:
                 "nav-link-selected": {"background-color": "#02ab21", "font-size": "18px"},
                 }
             )  
+        if app == "Bot Logs":
+            pags.botlogs.app()
         if app == "Profile Spider":
             pags.profileSpider.app()  
         if app == "Collection Spider":
