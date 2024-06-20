@@ -15,7 +15,6 @@ def fetch_profile_names(username_requester):
     if db is not None:
         profilerSpider = db.ProfileSpider
         distinct_profiles = profilerSpider.distinct('profile_name', {'username_requester': username_requester})
-        print(distinct_profiles)
         return distinct_profiles
 
 def fetch_data(profile_name, username_requester):
