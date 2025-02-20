@@ -35,9 +35,9 @@ def app():
     st.subheader('Filter Data Options')
     profile_names = fetch_profile_names(st.secrets["USER_REQUESTER"])
     selected_profile = st.selectbox('Select Profile Name', profile_names)
-    have_threshold = st.slider("Select threshold for 'have'", min_value=0, max_value=1000, value=100)
-    want_threshold = st.slider("Select threshold for 'want'", min_value=0, max_value=1000, value=100)
-    for_sale_threshold = st.slider("Select threshold for 'for sale'", min_value=0, max_value=100, value=2)
+    have_threshold = st.slider("Select threshold for 'have'", min_value=0, max_value=10000, value=100)
+    want_threshold = st.slider("Select threshold for 'want'", min_value=0, max_value=10000, value=100)
+    for_sale_threshold = st.slider("Select threshold for 'for sale'", min_value=0, max_value=10000, value=2)
 
     filter_button = st.button('Filter Data')
 
